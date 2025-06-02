@@ -41,13 +41,16 @@ exports.SignUp = async (req, res) => {
 
       res.cookie("token", token, {
         httpOnly: true,
-        sameSite: "Strict",
-        maxAge: 3600000,
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
+        maxAge: 3600000, // 1 hour
       });
+
       res.cookie("sellerId", newSeller._id, {
         httpOnly: true,
-        sameSite: "Strict", // Prevent CSRF attacks
-        maxAge: 3600000, // 1 hour
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
+        maxAge: 3600000,
       });
 
       // Send email asynchronously before return
@@ -100,8 +103,9 @@ exports.SignUp = async (req, res) => {
 
       res.cookie("token", token, {
         httpOnly: true,
-        sameSite: "Strict",
-        maxAge: 3600000,
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
+        maxAge: 3600000, // 1 hour
       });
 
       // Send email asynchronously before return
@@ -164,12 +168,14 @@ exports.SignIn = async (req, res) => {
       );
       res.cookie("token", token, {
         httpOnly: true,
-        sameSite: "Strict", // Prevent CSRF attacks
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
         maxAge: 3600000, // 1 hour
       });
       res.cookie("sellerId", seller._id, {
         httpOnly: true,
-        sameSite: "Strict", // Prevent CSRF attacks
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
         maxAge: 3600000, // 1 hour
       });
       return res
@@ -200,7 +206,8 @@ exports.SignIn = async (req, res) => {
       );
       res.cookie("token", token, {
         httpOnly: true,
-        sameSite: "Strict", // Prevent CSRF attacks
+        secure: true, // Required for HTTPS (Vercel + Render)
+        sameSite: "None", // Required for cross-site cookies
         maxAge: 3600000, // 1 hour
       });
 
