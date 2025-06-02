@@ -134,7 +134,7 @@ exports.getProductById = async (req, res) => {
   try {
     let product = await Product.findById(req.params.productId)
       .select(
-        "name image brand measuringUnit pricePerUnit minimumOrderQuantity location sellerId deliveryRadius"
+        "name image brand measuringUnit pricePerUnit minimumOrderQuantity category location sellerId deliveryRadius"
       )
       .lean();
     if (!product) {
