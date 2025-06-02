@@ -313,7 +313,7 @@ exports.ForgotPassword = async (req, res) => {
       seller.resetTokenExpiry = Date.now() + 3600000; // 1 hour
       await seller.save(); // ✅ Save changes
 
-      const resetUrl = `http://localhost:5173/resetPassword/${type}/${resetToken}`;
+      const resetUrl = `https://cropify-frontend.vercel.app/resetPassword/${type}/${resetToken}`;
 
       const mailRes = await sendEmail({
         email,
@@ -345,7 +345,7 @@ exports.ForgotPassword = async (req, res) => {
       user.resetTokenExpiry = Date.now() + 3600000; // 1 hour
       await user.save(); // ✅ Save changes
 
-      const resetUrl = `http://localhost:5173/resetPassword/${type}/${resetToken}`;
+      const resetUrl = `https://cropify-frontend.vercel.app/resetPassword/${type}/${resetToken}`;
 
       const mailRes = await sendEmail({
         email,

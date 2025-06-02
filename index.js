@@ -21,7 +21,7 @@ const port = 3000;
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", // Change to your frontend domain in prod
+    origin: true, // Change to your frontend domain in prod
   },
 });
 
@@ -59,5 +59,5 @@ app.get("/", (req, res) => {
 
 // Start server
 server.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running `);
 });
