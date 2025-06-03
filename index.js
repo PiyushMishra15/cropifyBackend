@@ -30,7 +30,7 @@ setupWebSocket(io); // ← Your function is used here
 // ✅ Middleware first
 app.use(
   cors({
-    origin: true, // Allow all origins
+    origin: "https://cropify-frontend.vercel.app",
     credentials: true,
   })
 );
